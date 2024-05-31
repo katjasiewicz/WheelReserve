@@ -41,37 +41,6 @@
         </div>
     </div>
 
-    <script>
-        var slides = document.getElementsByClassName('slide');
-        var currentSlide = 0;
-
-        slides[currentSlide].style.display = 'block';
-
-        function showNextSlide() {
-            slides[currentSlide].style.display = 'none';
-            currentSlide++;
-            if (currentSlide >= slides.length) {
-                currentSlide = 0;
-            }
-            slides[currentSlide].style.display = 'block';
-        }
-
-        function showPreviousSlide() {
-            slides[currentSlide].style.display = 'none';
-            currentSlide--;
-            if (currentSlide < 0) {
-                currentSlide = slides.length - 1;
-            }
-            slides[currentSlide].style.display = 'block';
-        }
-
-        var prevButton = document.querySelector('.prev-button');
-        var nextButton = document.querySelector('.next-button');
-
-        prevButton.addEventListener('click', showPreviousSlide);
-        nextButton.addEventListener('click', showNextSlide);
-    </script>
-
     <footer class="footer">
         <p>© Projekt na zaliczenie przedmiotu.<a href="regulamin.html">Regulamin</a></p>
     </footer>
