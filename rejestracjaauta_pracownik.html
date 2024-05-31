@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title></title>
+</head>
+
+<body>
+    <div class="banner">
+        <h1>WheelReserve</h1>
+    </div>
+    <div class="sidebar">
+        <a href="auta.html" class="przycisk">Baza aut</a>
+        <a href="historiarezerwacji.html" class="przycisk">Baza rezerwacji</a>
+        <a href="resetuj_haslo.html" class="przycisk">Zmień hasło</a>
+        <a href="index.html" class="przycisk">Wyloguj</a>
+    </div>
+    <div class="content">
+        <h1>Dodawanie auta</h1>
+        <form method="POST" action="" enctype="multipart/form-data">
+            <label for="model">Model:</label>
+            <input type="text" id="model" name="model" required><br>
+
+            <label for="cena">Cena:</label>
+            <input type="number" id="cena" name="cena" required><br>
+
+            <label for="zdjecie">Zdjęcie:</label>
+            <input type="file" id="zdjecie" name="zdjecie" accept="image/*" required><br>
+
+            <label for="opis">Opis:</label>
+            <textarea id="opis" name="opis" required></textarea><br>
+
+            <button class="przycisk" type="submit">Zarejestruj</button>
+        </form>
+    </div>
+    <footer class="footer">
+        <p>© Projekt na zaliczenie przedmiotu.<a href="regulamin.html">Regulamin</a></p>
+    </footer>
+</body>
+
+</html>

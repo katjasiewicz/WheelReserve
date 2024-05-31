@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title></title>
+    <script>
+        function showCarImage() {
+            var select = document.getElementById("model");
+            var selectedOption = select.options[select.selectedIndex];
+            var imageContainer = document.getElementById("car-image");
+
+            var imagePath = selectedOption.getAttribute("data-zdjecie");
+
+            var imageURL = "Grafiki/" + imagePath;
+
+            imageContainer.innerHTML = '<img src="' + imageURL + '" alt="Zdjęcie samochodu" style="width: 30%; opacity: 1;">';
+
+            var imageContainer = document.getElementById("car-image");
+
+            imageContainer.style.opacity = "1";
+        }
+
+        function checkAvailability() {
+            var select = document.getElementById("model");
+            var selectedOption = select.options[select.selectedIndex];
+            var uszkodzony = selectedOption.getAttribute("data-uszkodzony");
+            var submitButton = document.getElementById("submit-button");
+
+            if (uszkodzony === "1") {
+                submitButton.disabled = true;
+                alert("Ten samochód jest uszkodzony. Nie można złożyć rezerwacji.");
+            } else {
+                submitButton.disabled = false;
+            }
+        }
+
+        function checkReturnDate() {
+            var dataPobrania = new Date(document.getElementById("data_pobrania").value);
+            var dataZwrotu = new Date(document.getElementById("data_zwrotu").value);
+            var submitButton = document.getElementById("submit-button");
+
+            if (dataPobrania > dataZwrotu) {
+                submitButton.disabled = true;
+                alert("Data i godzina zwrotu nie mogą być wcześniejsze niż data i godzina rozpoczęcia rezerwacji.");
+            } else {
+                submitButton.disabled = false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="banner">
+        <h1>WheelReserve</h1>
+    </div>
+    <div class="sidebar">
+        <a href="auta.html" class="przycisk">Baza aut</a>
+        <a href="historiarezerwacji.html" class="przycisk">Baza rezerwacji</a>
+        <a href="resetuj_haslo.html" class="przycisk">Zmień hasło</a>
+        <a href="index.html" class="przycisk">Wyloguj</a>
+    </div>
+    <div class="content">
+        <a href="historiarezerwacji.html" class="przycisk">Baza rezerwacji</a>
+        <a href="zarezerwujpracownik.html" class="przycisk">Dodaj rezerwację</a>
+        <a href="zmien_rezerwacje.html" class="przycisk">Edytuj rezerwację</a>
+        <a href="usunrezerwacje.html" class="przycisk">Usuń rezerwację</a>
+        <br><br><br>
+        <h1>Zarezerwuj samochód</h1>
+        <form method="post" action="">
+            <br>
+            <label for="user">Wybierz użytkownika:</label>
+            <select id="user" name="user">
+                <option value="1">Użytkownik 1</option>
+                <option value="2">Użytkownik 2</option>
+                <option value="3">Użytkownik 3</option>
+            </select>
+            <br><br>
+            <label for="model">Wybierz samochód:</label>
+            <select id="model" name="model">
+                <option value="audi">Porsche 911</option>
+                <option value="bmw">BMW X5</option>
+                <option value="mercedes">Mercedes C klasa</option>
+            </select>
+            
+            <div id="car-image"></div>
+
+            <br>
+            <label for="data_pobrania">Data i godzina pobrania:</label>
+            <input type="datetime-local" id="data_pobrania" name="data_pobrania" required>
+
+            <br><br>
+            <label for="data_zwrotu">Data i godzina zwrotu:</label>
+            <input type="datetime-local" id="data_zwrotu" name="data_zwrotu" required onchange="checkReturnDate()">
+
+            <br><br>
+            <input id="submit-button" class="przycisk" type="submit" value="Zapisz rezerwację">
+        </form>
+    </div>
+    <footer class="footer">
+        <p>© Projekt na zaliczenie przedmiotu.<a href="regulamin.html">Regulamin</a></p>
+    </footer>
+</body>
+
+</html>

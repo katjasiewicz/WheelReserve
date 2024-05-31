@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title></title>
+</head>
+
+<body>
+    <div class="banner">
+        <h1>WheelReserve</h1>
+    </div>
+    <div class="sidebar">
+        <a href="baza.html" class="przycisk">Baza użytkowników</a>
+        <a href="auta_admin.html" class="przycisk">Baza aut</a>
+        <a href="raporty.html" class="przycisk">Raporty</a>
+        <a href="backup.html" class="przycisk">Backup</a>
+        <a href="monitorujsystem.html" class="przycisk">Monitoruj system</a>
+        <a href="index.html" class="przycisk">Wyloguj</a>
+    </div>
+    <div class="content">
+        <a href="dodanieadmin.html" class="przycisk">Dodaj nowego użytkownika</a>
+        <a href="modyfikuj.html" class="przycisk">Modyfikuj użytkownika</a>
+        <a href="usun.html" class="przycisk">Usuń użytkownika</a>
+        <a href="nadawanieuprawnien.html" class="przycisk">Nadaj uprawnienia</a>
+        <a href="resetuj_haslo_admin.html" class="przycisk">Resetuj hasło</a>
+        <br><br>
+        <h1>Wybierz użytkownika i rolę:</h1>
+        <form method="POST" action="">
+            <label for="login">Wybierz login użytkownika:</label>
+            <select name="login" id="login">
+            </select>
+            <br><br>
+            <label for="rola">Wybierz rolę:</label>
+            <select name="rola" id="rola">
+                <option value="pracownik">Pracownik</option>
+                <option value="klient">Klient</option>
+            </select>
+            <br><br>
+            <input class="przycisk" type="submit" value="Zapisz rolę">
+        </form>
+    </div>
+    <footer class="footer">
+        <p>© Projekt na zaliczenie przedmiotu.<a href="regulamin.html">Regulamin</a></p>
+    </footer>
+</body>
+
+</html>

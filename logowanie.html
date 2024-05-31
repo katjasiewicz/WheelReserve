@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Logowanie</title>
+    <script>
+        function checkLogin() {
+            var login = document.getElementById('login').value;
+            if (login === 'admin') {
+                window.location.href = 'stronaadmin.html';
+            } else if (login === 'pracownik') {
+                window.location.href = 'stronapracownika.html';
+            } else if (login === 'klient') {
+                window.location.href = 'stronauzytkownika.html';
+            } else {
+                alert('Nieznany login');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="banner">
+        <h1>WheelReserve</h1>
+    </div>
+    <div class="sidebar">
+        <a href="index.html" class="przycisk">Strona główna</a>
+        <a href="opis.html" class="przycisk">O nas</a>
+        <a href="oferta.html" class="przycisk">Nasza oferta</a>
+        <a href="kontakt.html" class="przycisk">Kontakt</a>
+        <a href="logowanie.html" class="przycisk">Logowanie</a>
+        <a href="rejestracja.html" class="przycisk">Rejestracja</a>
+    </div>
+    <div class="content">
+        <br>
+        <input type="text" id="login" placeholder="Login" required><br><br>
+        <input type="password" id="haslo" placeholder="Hasło" required><br><br>
+        <button class="przycisk" onclick="checkLogin()">Zaloguj</button>
+    </div>
+    <footer class="footer">
+        <p>© Projekt na zaliczenie przedmiotu.<a href="regulamin.html">Regulamin</a></p>
+    </footer>
+</body>
+
+</html>
