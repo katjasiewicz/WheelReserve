@@ -4,50 +4,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title></title>
-    <script>
-        function showCarImage() {
-            var select = document.getElementById("model");
-            var selectedOption = select.options[select.selectedIndex];
-            var imageContainer = document.getElementById("car-image");
-
-            var imagePath = selectedOption.getAttribute("data-zdjecie");
-
-            var imageURL = "Grafiki/" + imagePath;
-
-            imageContainer.innerHTML = '<img src="' + imageURL + '" alt="Zdjęcie samochodu" style="width: 30%; opacity: 1;">';
-
-            var imageContainer = document.getElementById("car-image");
-
-            imageContainer.style.opacity = "1";
-        }
-
-        function checkAvailability() {
-            var select = document.getElementById("model");
-            var selectedOption = select.options[select.selectedIndex];
-            var uszkodzony = selectedOption.getAttribute("data-uszkodzony");
-            var submitButton = document.getElementById("submit-button");
-
-            if (uszkodzony === "1") {
-                submitButton.disabled = true;
-                alert("Ten samochód jest uszkodzony. Nie można złożyć rezerwacji.");
-            } else {
-                submitButton.disabled = false;
-            }
-        }
-
-        function checkReturnDate() {
-            var dataPobrania = new Date(document.getElementById("data_pobrania").value);
-            var dataZwrotu = new Date(document.getElementById("data_zwrotu").value);
-            var submitButton = document.getElementById("submit-button");
-
-            if (dataPobrania > dataZwrotu) {
-                submitButton.disabled = true;
-                alert("Data i godzina zwrotu nie mogą być wcześniejsze niż data i godzina rozpoczęcia rezerwacji.");
-            } else {
-                submitButton.disabled = false;
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -66,15 +22,13 @@
         <form method="post" action="">
             <br>
             <label for="model">Wybierz samochód:</label>
-            <select id="model" name="model" onchange="showCarImage(); checkAvailability()">
+            <select id="model" name="model">
                 <option value="audi">Porsche 911</option>
                 <option value="bmw">BMW X5</option>
                 <option value="mercedes">Mercedes C klasa</option>
             </select>
 
-            <br><br>
-            <div id="car-image"></div>
-
+            
             <br><br>
             <label for="data_pobrania">Data i godzina pobrania:</label>
             <input type="datetime-local" id="data_pobrania" name="data_pobrania" required>

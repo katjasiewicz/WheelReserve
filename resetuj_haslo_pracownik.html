@@ -7,7 +7,6 @@
 </head>
 
 <body>
-
     <div class="banner">
         <h1>WheelReserve</h1>
     </div>
@@ -18,19 +17,14 @@
         <a href="index.html" class="przycisk">Wyloguj</a>
     </div>
     <div class="content">
-        <a href="historiarezerwacji.html" class="przycisk">Baza rezerwacji</a>
-        <a href="zarezerwujpracownik.html" class="przycisk">Dodaj rezerwację</a>
-        <a href="zmien_rezerwacje.html" class="przycisk">Edytuj rezerwację</a>
-        <a href="usunrezerwacje.html" class="przycisk">Usuń rezerwację</a>
-        <br><br><br>
-        <h1>Edycja rezerwacji</h1>
-        <h2>Lista rezerwacji:</h2>
-        <form action="" method="post">
-            <label for="rezerwacja">Wybierz rezerwację do edycji:</label>
-            <select id="rezerwacja" name="rezerwacja" required>
-            </select>
-            <br><br>
-            <button class="przycisk" type="submit">Edytuj rezerwację</button>
+        <form method="POST" action="">
+            <br>
+            <label for="haslo">Hasło:</label>
+            <input type="password" id="haslo" name="haslo" required><br><br>
+            <label for="hasloPowtorz">Powtórz hasło:</label>
+            <input type="password" id="hasloPowtorz" name="hasloPowtorz" required><br><br>
+            <br>
+            <input type="submit" value="Zaktualizuj hasło">
         </form>
     </div>
 
